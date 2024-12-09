@@ -100,6 +100,7 @@ func (jt *JumpTable) InsertNode(key string, val int) string {
 		node.NextNode = append(node.NextNode, nil)
 		if cnt > jt.cntHigh {
 			jt.root.NextNode = append(jt.root.NextNode, node)
+			break
 		} else {
 			r := jt.searchNode(val, val, cnt-1)
 			r.NextNode[cnt-1], node.NextNode[cnt-1] = node, r.NextNode[cnt-1]
